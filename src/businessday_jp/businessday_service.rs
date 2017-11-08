@@ -5,7 +5,7 @@
 // or the MIT license <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your option.
 // This file may not be copied, modified, or distributed except according to those terms.
 
-use holiday_jp::{HolidayService, DateTimeToString};
+use holiday_jp::HolidayService;
 use chrono::{Local, Datelike, DateTime, TimeZone, Duration};
 
 pub struct BusinessDayService;
