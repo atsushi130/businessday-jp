@@ -12,8 +12,7 @@ pub struct BusinessDayService;
 
 impl BusinessDayService {
 
-    pub fn is_businessday(&self, year: i32, month: u32, day: u32, at_businessday: u32) -> bool {
-        let date = Local.ymd(year, month, day).and_hms(0, 0, 0);
+    pub fn is_businessday(&self, date: DateTime<Local>, at_businessday: u32) -> bool {
         date == self.get_businessday(date.year(), date.month(), at_businessday)
     }
 
