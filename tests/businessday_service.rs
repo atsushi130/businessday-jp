@@ -12,16 +12,19 @@ extern crate chrono;
 mod businessday_service_tests {
 
     use businessday_jp::BusinessDayService;
-    use chrono::{Local, Datelike, DateTime, TimeZone};
+    use chrono::{Local, TimeZone};
 
     #[test]
     fn is_businessday() {
-        let result = BusinessDayService.is_businessday(2017, 1, 5, 2);
+        let date   = Local.ymd(2017, 1, 5).and_hms(0, 0, 0);
+        let result = BusinessDayService.is_businessday(date, 2);
         assert_eq!(true, result);
     }
 
+    #[test]
     fn is_not_businessday() {
-        let result = BusinessDayService.is_businessday(2017, 1, 5, 1);
+        let date   = Local.ymd(2017, 1, 5).and_hms(0, 0, 0);
+        let result = BusinessDayService.is_businessday(date, 1);
         assert_eq!(false, result);
     }
 
